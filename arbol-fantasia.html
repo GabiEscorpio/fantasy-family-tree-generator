@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Árbol Genealógico de Fantasía</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #f2efe6;
+      padding: 20px;
+    }
+    #tree {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>Árbol Genealógico del Reino de Eldoria</h2>
+  <div id="tree"></div>
+
+  <script>
+    const config = {
+      chart: {
+        container: "#tree",
+        rootOrientation: "NORTH",
+        node: {
+          HTMLclass: "nodeExample1"
+        },
+        connectors: {
+          type: "step"
+        }
+      },
+
+      nodeStructure: {
+        text: { name: "Rey Tharion" },
+        children: [
+          {
+            text: { name: "Princesa Elenya" },
+            children: [
+              {
+                text: { name: "Príncipe Kaelen" }
+              }
+            ]
+          },
+          {
+            text: { name: "Príncipe Vael" }
+          }
+        ]
+      }
+    };
+
+    new Treant(config);
+  </script>
+</body>
+</html>
